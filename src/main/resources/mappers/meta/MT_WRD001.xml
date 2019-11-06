@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0/EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MT_WRD001">
+	
+	<select id="iqryRgstWord" resultType="hash" parameterType="map">
+	SELECT WORD_SEQNO  	/* 단어일련번호 */
+		 , WORD  		/* 단어 */
+		 , WORD_NM  	/* 단어명 */
+		 
+	  FROM MT_WRD001	/* 단어기본 */
+	 WHERE WORD_NM	= #{word_nm}
+	</select>
+</mapper>
