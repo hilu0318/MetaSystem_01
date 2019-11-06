@@ -5,7 +5,7 @@
 
 <mapper namespace="MT_WRD001">
 	
-	<select id="iqryRgstWord" resultType="hash" parameterType="map">
+	<select id="iqryRgstWord" resultType="mdata" parameterType="mdata">
 	SELECT WORD_SEQNO  	/* 단어일련번호 */
 		 , WORD  		/* 단어 */
 		 , WORD_NM  	/* 단어명 */

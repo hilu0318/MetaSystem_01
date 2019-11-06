@@ -8,6 +8,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.hilu0318.meta.cmm.domain.MData;
+
 @Repository
 public class WordBsicDao {
 	
@@ -16,12 +18,14 @@ public class WordBsicDao {
 	@Inject
 	private SqlSession sqlSession;
 	
-	public Map<String, Object> iqryRgstWord(Map<String, Object> iData){
+	public MData iqryRgstWord(MData iData){
 		
-		Map<String, Object> rData;
+		MData rData = new MData();
+		System.out.println("Dao In");
+		rData = (MData)sqlSession.selectOne(namespace + ".iqryRgstWord", iData);
+		System.out.println("Dao Out");
+		System.out.println("rData : " + rData.toString());
 		
-		rData = sqlSession.selectOne(namespace + ".iqryRgstWord", iData);
-	
 		return rData;
 	}
 }

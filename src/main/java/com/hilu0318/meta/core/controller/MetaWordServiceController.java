@@ -1,5 +1,6 @@
 package com.hilu0318.meta.core.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -10,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.hilu0318.meta.cmm.domain.MData;
 import com.hilu0318.meta.core.service.MetaWordIqryService;
 
 @Controller
-@RequestMapping(value = "/meta")
 public class MetaWordServiceController {
 	
 	@Inject
@@ -22,11 +23,8 @@ public class MetaWordServiceController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/meta", method = RequestMethod.GET)
 	public String loadIqryMetaWordGet(@RequestParam Map<String, Object> iData, Model model){
-		
-		System.out.println(iData.toString());
-		//Map<String, Object> rData = service.iqryMetaWordIqry(iData);
 		
 		return "main";
 	}
@@ -36,12 +34,15 @@ public class MetaWordServiceController {
 	 *	logicalName	: 
 	 *	veiwPath	: 
 	 */
-	@RequestMapping(value = "/word", method = RequestMethod.GET)
+	@RequestMapping(value = "/meta/word", method = RequestMethod.GET)
 	public String iqryMetaWordGet(@RequestParam Map<String, Object> iData, Model model){
+		MData rIqryMetaWordGet 	= new MData();
 		
-		System.out.println(iData.toString());
+		rIqryMetaWordGet = service.iqryMetaWordIqry(new MData(iData));
+		
 		//Map<String, Object> rData = service.iqryMetaWordIqry(iData);
-		
+		model.addAttribute("rIqryMetaWordGet", rIqryMetaWordGet);
+		System.out.println("rIqryMetaWordGet : " + rIqryMetaWordGet.toString());
 		return "main";
 	}
 }

@@ -35,7 +35,7 @@ public class TestController {
 		Map<String, Object> iData = new HashMap<String, Object>();
 		Map<String, Object> rData = new HashMap<String, Object>();
 		iData.put("word_nm", "단어");
-		rData = dao.iqryRgstWord(iData);
+		///rData = dao.iqryRgstWord(iData);
 		System.out.println(rData.toString());
 	}
 		
