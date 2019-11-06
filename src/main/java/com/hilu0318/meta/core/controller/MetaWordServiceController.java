@@ -32,7 +32,9 @@ public class MetaWordServiceController {
 	}
 	
 	/**
-	 * Simply selects the home view to render by returning its name.
+	 *	URL			: 
+	 *	logicalName	: 
+	 *	veiwPath	: 
 	 */
 	@RequestMapping(value = "/word", method = RequestMethod.GET)
 	public String iqryMetaWordGet(@RequestParam Map<String, Object> iData, Model model){
