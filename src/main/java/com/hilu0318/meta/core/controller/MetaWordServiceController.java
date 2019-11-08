@@ -30,7 +30,7 @@ public class MetaWordServiceController {
 	}
 	
 	/**
-	 *	URL			: 
+	 *	URL			: test upload
 	 *	logicalName	: 
 	 *	veiwPath	: 
 	 */
