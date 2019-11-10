@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hilu0318.meta.cmm.domain.MData;
-import com.hilu0318.meta.core.service.MetaWordIqryService;
+import com.hilu0318.meta.cmm.exception.EmptyException;
+import com.hilu0318.meta.core.service.MetaWordService;
 
 @Controller
 public class MetaWordServiceController {
 	
 	@Inject
-	private MetaWordIqryService service;
+	private MetaWordService service;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -30,7 +31,7 @@ public class MetaWordServiceController {
 	}
 	
 	/**
-	 *	URL			: test upload - 2
+	 *	URL			: 
 	 *	logicalName	: 
 	 *	veiwPath	: 
 	 */
@@ -43,6 +44,29 @@ public class MetaWordServiceController {
 		//Map<String, Object> rData = service.iqryMetaWordIqry(iData);
 		model.addAttribute("rIqryMetaWordGet", rIqryMetaWordGet);
 		System.out.println("rIqryMetaWordGet : " + rIqryMetaWordGet.toString());
+		return "main";
+	}
+	
+	/**
+	 *	URL			: 
+	 *	logicalName	: 
+	 *	veiwPath	: 
+	 */
+	@RequestMapping(value = "/meta/word", method = RequestMethod.POST)
+	public String rgstMetaWordPost(@RequestParam Map<String, Object> iData, Model model){
+		MData rIqryMetaWordGet 	= new MData();
+		MData error 			= new MData();
+		try {
+			rIqryMetaWordGet = service.rgstMetaWord(new MData(iData));
+			model.addAttribute("rIqryMetaWordGet", rIqryMetaWordGet);
+			
+		} catch (EmptyException e) {
+			error.setBoolean(e.getMessage(), true);
+			e.printStackTrace();
+			model.addAttribute("error", error);
+			return "main";
+		}
+		
 		return "main";
 	}
 }

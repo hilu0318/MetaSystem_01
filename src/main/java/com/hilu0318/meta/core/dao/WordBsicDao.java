@@ -21,11 +21,15 @@ public class WordBsicDao {
 	public MData iqryRgstWord(MData iData){
 		
 		MData rData = new MData();
-		System.out.println("Dao In");
-		rData = (MData)sqlSession.selectOne(namespace + ".iqryRgstWord", iData);
-		System.out.println("Dao Out");
-		System.out.println("rData : " + rData.toString());
 		
+		rData = (MData)sqlSession.selectOne(namespace + ".iqryRgstWord", iData);
+		
+		return rData;
+	}
+	
+	public int rgstMetaWord(MData iData) {
+		int rData = 0;
+		rData = sqlSession.insert(namespace + ".rgstMetaWord",  iData);
 		return rData;
 	}
 }

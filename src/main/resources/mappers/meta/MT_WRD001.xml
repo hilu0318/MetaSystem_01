@@ -13,4 +13,26 @@
 	  FROM MT_WRD001	/* 단어기본 */
 	 WHERE WORD_NM	= #{word_nm}
 	</select>
+	
+	<insert id="rgstMetaWord" parameterType="mdata">
+	INSERT INTO MT_WRD001	/* 단어기본 */
+			( WORD_SEQNO  		/* 단어일련번호 */
+			, WORD  			/* 단어 */
+			, WORD_NM  			/* 단어명 */
+			, WORD_CMNT  		/* 단어설명 */
+			, USE_YN  			/* 사용여부 */
+			, DEL_YN  			/* 삭제여부 */
+			, RGST_USER  		/* 등록사용자 */
+			, RGST_DTTM  		/* 등록일시 */
+			)
+	VALUES	( (SELECT NVL(MAX(T.WORD_SEQNO), 0) + 1 FROM MT_WRD001 T)
+			, #{word}
+			, #{word_nm}
+			, #{word_cmnt}
+			, NVL(#{use_yn}, 'Y')
+			, NVL(#{del_yn}, 'N')
+			, #{rgst_user}
+			, SYSDATE
+			)
+	</insert>
 </mapper>

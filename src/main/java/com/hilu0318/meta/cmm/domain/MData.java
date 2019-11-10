@@ -1,5 +1,6 @@
 package com.hilu0318.meta.cmm.domain;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -29,5 +30,32 @@ public class MData extends HashMap<String, Object>{
 			super.put(key, iMap.get(key));
 		}
 		System.out.println("setMap.toString : " + super.toString());
+	}
+	
+	public Object set(String key, Object value) {
+		return this.put(key, value);
+	}
+	
+	public Object setString(String key, Object value) {
+		return this.put(key, (String)value);
+	}
+	
+	public Object setInt(String key, Object value) {
+		return this.put(key, (int)value);
+	}
+	public Object setLong(String key, Object value) {
+		return this.put(key, (long)value);
+	}
+	public Object setBigDecimal(String key, Object value) {
+		return this.put(key, (BigDecimal)value);
+	}
+	public Object setFloat(String key, Object value) {
+		return this.put(key, (float)value);
+	}
+	public Object setDouble(String key, Object value) {
+		return this.put(key, (double)value);
+	}
+	public Object setBoolean(String key, Object value) {
+		return this.put(key, (boolean)value);
 	}
 }
