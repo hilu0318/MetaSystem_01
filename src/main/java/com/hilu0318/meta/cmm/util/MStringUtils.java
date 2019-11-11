@@ -10,6 +10,10 @@ public class MStringUtils {
 		return result;
 	}
 	
+	/*
+	 * description 	: text가 null이거나 공백일 경우 true 리턴.
+	 * return 		: boolean
+	 */
 	public static boolean isEmpty(String txt) {
 		boolean result = true;
 		if(txt != null && txt != "") {
