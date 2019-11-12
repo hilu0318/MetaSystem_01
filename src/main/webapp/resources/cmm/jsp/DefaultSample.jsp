@@ -11,7 +11,11 @@
 	</head>
 	<body>
 	
-		
+		<!-- 스크립트 시작 -->
+	    <jsp:include page="/resources/cmm/jsp/inBottomBodyScriptDefault.jsp"/>
+	    
+	    <!-- 스크립트 내용-->
+	    
 		<jsp:include page="/resources/cmm/jsp/inBottomBodyScript.jsp"/>
 	</body>
 </html>
