@@ -11,8 +11,8 @@ public class MStringUtils {
 	}
 	
 	/*
-	 * description 	: text°¡ nullÀÌ°Å³ª °ø¹éÀÏ °æ¿ì true ¸®ÅÏ.
-	 * return 		: boolean
+	 * description	: ë¬¸ìì—´ì´ nullì´ê±°ë‚˜ ê³µë€ì¼ ê²½ìš° trueë¥¼ ë¦¬í„´.
+	 * return type	: boolean
 	 */
 	public static boolean isEmpty(String txt) {
 		boolean result = true;
