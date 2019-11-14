@@ -52,6 +52,42 @@
 </div>
 
 
+<div class="container mar-top-30">
+	<div class="row">
+
+		<form id="form_rgst_word" class="form-inline" method="post" action="/meta/word">
+      <!-- <div class="form-group">
+        <input type="date" class="form-control" id="iqry_stdt" name="iqry_stdt">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail2">~</label>
+        <div class="form-group">
+          <input type="date" class="form-control" id="iqry_endt" name="iqry_endt">
+        </div>
+      </div> -->
+			<button type="button" class="btn btn-default" id="btn_iqry_word_lst" onclick="on_click_btn_iqry_word_lst(event)">
+				조회
+			</button>
+      <div hidden>
+        <input type="text" name="next_ord" id="" hidden>
+
+      </div>
+		</form>
+    <table class="table table-hover" id="table02">
+      <thead>
+        <tr>
+          <th id="no">no</th>
+          <th id="name">name</th>
+          <th id="age">age</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+	</div>
+</div>
+
 <!-- 스크립트 시작 -->
    
 <script type="text/javascript">
