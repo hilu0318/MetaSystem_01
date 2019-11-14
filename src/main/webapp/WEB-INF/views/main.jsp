@@ -56,14 +56,14 @@
 	<div class="row">
 
 		<form id="form_rgst_word" class="form-inline" method="post" action="/meta/word">
-      <!-- <div class="form-group">
+      <!-- <div class="form-group col-xs-5 col-sm-4 col-md-4 col-lg-3">
         <input type="date" class="form-control" id="iqry_stdt" name="iqry_stdt">
       </div>
-      <div class="form-group">
-        <label for="exampleInputEmail2">~</label>
-        <div class="form-group">
-          <input type="date" class="form-control" id="iqry_endt" name="iqry_endt">
-        </div>
+      <div class="form-group col-xs-1 col-sm-1">
+        <p class="form-control-static">~</p>
+      </div>
+      <div class="form-group col-xs-5 col-sm-4 col-md-4 col-lg-3">
+        <input type="date" class="form-control" id="iqry_endt" name="iqry_endt">
       </div> -->
 			<button type="button" class="btn btn-default" id="btn_iqry_word_lst" onclick="on_click_btn_iqry_word_lst(event)">
 				조회
