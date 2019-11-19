@@ -24,7 +24,7 @@ public class MetaWordServiceController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/meta", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String loadIqryMetaWordGet(@RequestParam Map<String, Object> iData, Model model){
 		
 		return "main";
@@ -32,6 +32,46 @@ public class MetaWordServiceController {
 	
 	/**
 	 *	URL			: 
+	 *	logicalName	: 
+	 *	veiwPath	: 
+	 */
+	@RequestMapping(value = "/rgst", method = RequestMethod.GET)
+	public String loadRgstGet(@RequestParam Map<String, Object> iData, Model model){
+//		MData rIqryMetaWordGet 	= new MData();
+//		MData error 			= new MData();
+		
+		return "menu/rgst";
+	}
+	
+	/**
+	 *	URL			: 
+	 *	logicalName	: 
+	 *	veiwPath	: 
+	 */
+	@RequestMapping(value = "/iqryWordLst", method = RequestMethod.GET)
+	public String loadIqryWordLstGet(@RequestParam Map<String, Object> iData, Model model){
+//		MData rIqryMetaWordGet 	= new MData();
+//		MData error 			= new MData();
+		
+		return "menu/iqryWordLst";
+	}
+	
+	/**
+	 *	URL			: 
+	 *	logicalName	: 
+	 *	veiwPath	: 
+	 */
+	@RequestMapping(value = "/iqryTermLst", method = RequestMethod.GET)
+	public String loadIqryTermLstGet(@RequestParam Map<String, Object> iData, Model model){
+//		MData rIqryMetaWordGet 	= new MData();
+//		MData error 			= new MData();
+		
+		return "menu/iqryTermLst";
+	}
+	
+	
+	/**
+	 *	URL			: /
 	 *	logicalName	: 
 	 *	veiwPath	: 
 	 */
@@ -69,4 +109,8 @@ public class MetaWordServiceController {
 		
 		return "main";
 	}
+	
+	
+	
+	
 }
