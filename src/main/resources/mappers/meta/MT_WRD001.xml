@@ -6,9 +6,9 @@
 <mapper namespace="MT_WRD001">
 	
 	<select id="iqryRgstWord" resultType="mdata" parameterType="mdata">
-	SELECT WORD_SEQNO  	/* 단어일련번호 */
-		 , WORD  		/* 단어 */
+	SELECT WORD  		/* 단어 */
 		 , WORD_NM  	/* 단어명 */
+		 , WORD_CMNT  	/* 단어설명 */
 		 
 	  FROM MT_WRD001	/* 단어기본 */
 	 WHERE WORD_NM	= #{word_nm}
@@ -16,8 +16,7 @@
 	
 	<insert id="rgstMetaWord" parameterType="mdata">
 	INSERT INTO MT_WRD001	/* 단어기본 */
-			( WORD_SEQNO  		/* 단어일련번호 */
-			, WORD  			/* 단어 */
+			( WORD  			/* 단어 */
 			, WORD_NM  			/* 단어명 */
 			, WORD_CMNT  		/* 단어설명 */
 			, USE_YN  			/* 사용여부 */
@@ -25,8 +24,7 @@
 			, RGST_USER  		/* 등록사용자 */
 			, RGST_DTTM  		/* 등록일시 */
 			)
-	VALUES	( (SELECT NVL(MAX(T.WORD_SEQNO), 0) + 1 FROM MT_WRD001 T)
-			, #{word}
+	VALUES	( #{word}
 			, #{word_nm}
 			, #{word_cmnt}
 			, NVL(#{use_yn}, 'Y')
@@ -35,4 +33,19 @@
 			, SYSDATE
 			)
 	</insert>
+	
+	<select id="iqryLstMetaWord" resultType="mdata">
+	SELECT A.WORD  			/* 단어 */
+		 , A.WORD_NM  		/* 단어명 */
+		 , A.WORD_CMNT  	/* 단어설명 */
+		 , A.USE_YN  		/* 사용여부 */
+		 , A.DEL_YN  		/* 삭제여부 */
+		 , A.RGST_USER  	/* 등록사용자 */
+		 , A.RGST_DTTM  	/* 등록일시 */
+	  FROM MT_WRD001 A 		/* 단어기본 */
+	 WHERE 1 = 1
+	   <if test="word != null"		>AND A.WORD 		= #{word}	</if>
+	   <if test="word_nm != null"	>AND A.WORD_NM 		= #{word_nm}</if>
+	
+	</select>
 </mapper>

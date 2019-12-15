@@ -8,7 +8,7 @@
 		
 		<div class="list-group">
 			<a href="/rgst" 		class="list-group-item">단어/용어 등록/조회.</a>
-			<a href="/iqryWordLst" 	class="list-group-item">단어 목록 조회.</a>
+			<a href="/iqry/wordLst"	class="list-group-item">단어 목록 조회.</a>
 			<a href="/iqryTermLst" 	class="list-group-item">용어 목록 조회.</a>
 		</div>
 		

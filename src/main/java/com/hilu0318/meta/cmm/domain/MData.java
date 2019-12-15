@@ -3,6 +3,7 @@ package com.hilu0318.meta.cmm.domain;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.type.Alias;
@@ -20,6 +21,14 @@ public class MData extends HashMap<String, Object>{
 	
 	public Object put(String key, Object value) {
 		return super.put(key.toLowerCase(), value);
+	}
+	
+	public Object setMData(String key, MData iDtat) {
+		return super.put(key, iDtat);
+	}
+	
+	public Object setList(String key, List<MData> list) {
+		return super.put(key, list);
 	}
 	
 	public void setMap(Map<String, Object> iMap) {

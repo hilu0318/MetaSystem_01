@@ -2,8 +2,31 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title></title>
-		<jsp:include page="/resources/cmm/jsp/inBootHeadLink.jsp"/>
+		
+	<!--===============================================================================================-->	
+		<link rel="icon" 		type="image/png" href="/resources/cmm/images/table/icons/favicon.ico"/>
+	<!--===============================================================================================--
+		<link rel="stylesheet" 	type="text/css" href="/resources/cmm/vendor/table/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" 	type="text/css" href="/resources/cmm/fonts/table/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" 	type="text/css" href="/resources/cmm/vendor/table/animate/animate.css">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" 	type="text/css" href="/resources/cmm/vendor/table/select2/select2.min.css">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" 	type="text/css" href="/resources/cmm/vendor/table/perfect-scrollbar/perfect-scrollbar.css">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" 	type="text/css" href="/resources/cmm/css/table/util.css">
+		<link rel="stylesheet" 	type="text/css" href="/resources/cmm/css/table/main.css">
+	<!--===============================================================================================-->
+		<!-- Local File
+		<link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		  -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		
 		<style media="screen">
 	      .top-30 {
 	        top:30px;
@@ -20,7 +43,17 @@
 	          margin: 0;
 	      }
 	    </style>
-		<jsp:include page="/resources/cmm/jsp/inJqueryHeadScript.jsp"/>
-		<jsp:include page="/resources/cmm/jsp/inBottomBodyScriptDefault.jsp"/>
+	    <!-- jQuery : 제일 밑에줄 -->
+		<!-- Local File
+		<script src="resources/jquery/js/jquery-3.4.1.js"></script>
+		 -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	    
+	    <!-- Last Bottom Line -->
+		<!-- jQuery v1.11.2 필요한건지 확인 필요-->
+		<script src="/resources/cmm/js/utils/dom_util.js"></script>
+		<script src="/resources/cmm/js/utils/data_util.js"></script>
+		<script src="/resources/cmm/js/utils/string_util.js"></script>
+		
 	</head>
 	<body>
